@@ -1,38 +1,175 @@
-.App {
-  text-align: center;
+:root {
+    --theme-green-color: #67BF6B;
+    --theme-light-grey-color: #E2E4E7;
+    --theme-grey-color: #BDBEBF;
+    --theme-dark-grey-color: #6F7177;
+    --theme-black-color: #1A243A;
+    --theme-purple-color: #4B40EE;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.icon {
+    margin-right: 0.4rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Safari */
+:-webkit-full-screen {
+    background-color: white;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* IE11 */
+:-ms-fullscreen {
+    background-color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Standard syntax */
+:fullscreen {
+    background-color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 3.75rem 11.875rem 3.75rem 3.75rem;
+    font-size: 1.125rem;
+}
+
+.app__price {
+    margin-bottom: 2.75rem;
+    padding-bottom: 2.5rem;
+    height: 7.625rem;
+    position: relative;
+}
+
+.app__price .amount {
+    font-size: 4.375rem;
+    color: var(--theme-black-color);
+}
+
+.app__price .rate {
+    color: var(--theme-green-color);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.app__price .unit {
+    font-size: 1.5rem;
+    color: var(--theme-grey-color);
+    position: absolute;
+    top: 0.6rem;
+}
+
+.app__menu {
+    margin-bottom: 4rem;
+    border-bottom: 1px solid #EFF1F3;
+    color: var(--theme-dark-grey-color);
+    user-select: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.app__menu * {
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.app__menu *:not(.app__menu *:last-child) {
+    margin-right: 1rem;
+}
+
+.app__menu .menu__clicked{
+    color: var(--theme-black-color);
+    border-bottom: 4px solid var(--theme-purple-color);
+}
+
+.app__actions {
+    display: flex;
+    justify-content: space-between;
+    color: var(--theme-dark-grey-color);
+    user-select: none;
+    margin-bottom: 2.75rem;
+}
+
+.app__actions > div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.app__actions > div > * {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.app__actions > div > *:not(.app__actions > div > *:last-child) {
+    margin-right: 1rem;
+}
+
+.app__actions .time__clicked {
+    color: #fff;
+    background-color: var(--theme-purple-color);
+    border-radius: 5px;
+}
+
+.app__chart {
+    border-color: var(--theme-light-grey-color);
+    border-style: solid;
+    border-width: 0 1px 1px;
+    position: relative;
+}
+
+.tooltipDesign, .currentValueBoxDesign {
+    opacity: 1;
+    pointer-events: none;
+    transform: translate(-30%, -50%);
+    transition: all 0.1s ease;
+    position: absolute;
+}
+
+.tooltipTable {
+    background-color: var(--theme-black-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.last-value {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background-color: var(--theme-purple-color);
+    color: white;
+}
+
+@media screen and (max-width: 450px) {
+    html {
+        font-size: 65%;
+    }
+
+    .app {
+        padding: 3.75rem;
+    }
+}
+
+@media screen and (min-width: 451px) and (max-width: 768px) {
+    html {
+        font-size: 70%;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    html {
+        font-size: 80%;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+    html {
+        font-size: 85%;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    html {
+        font-size: 130%;
+    }
 }
